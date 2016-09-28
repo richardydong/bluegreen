@@ -6,6 +6,6 @@ node {
 
 // Deploy the project based on a existing ImageStream
 def appDeploy(){
-    sh "oc new-app https://github.com/tariq-islam/bluegreen.git#ocp33-pipeline"
+    sh "oc new-app https://github.com/tariq-islam/bluegreen.git#ocp33-pipeline || oc start-build bluegreen"
     sh "oc expose service bluegreen || echo 'Service already exposed'"
 }
