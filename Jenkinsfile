@@ -1,3 +1,3 @@
 node {
-  echo "hello pipeline"
+  echo 'hello pipeline'
 }
