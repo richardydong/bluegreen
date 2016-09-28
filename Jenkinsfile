@@ -1,3 +1,4 @@
 node {
-  echo 'hello pipeline'
+  stage 'helloworld'
+  echo 'hello pipeline world'
 }
