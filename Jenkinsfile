@@ -1,5 +1,4 @@
 node {
-<<<<<<< HEAD
     stage 'Build image and deploy in Dev'
     echo 'Building docker image and deploying to Dev'
     buildApp('app-dev')
@@ -20,7 +19,7 @@ node {
 def buildApp(String project){
     sh "oc login https://192.168.122.124:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
     sh "oc project ${project}"
-    sh "oc start-build php-bluegreen-app"
+    sh "oc start-build bluegreen"
     appDeploy()
 }
 
@@ -28,16 +27,12 @@ def buildApp(String project){
 def deployApp(String origProject, String project){
     sh "oc project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
-    sh "oc tag ${origProject}/php-bluegreen-app:latest ${project}/php-bluegreen-app:latest"
+    sh "oc tag ${origProject}/bluegreen:latest ${project}/bluegreen:latest"
     appDeploy()
 }
 
 // Deploy the project based on an existing ImageStream
 def appDeploy(){
-    sh "oc new-app php-bluegreen-app || echo 'Application already Exists'"
-    sh "oc expose service php-bluegreen-app || echo 'Service already exposed'"
-=======
-  stage 'Build and Deploy image to Dev'
-  sh "oc start-build bluegreen"
->>>>>>> 83a818b4bf11d306990351809e2092a1b3ede5cb
+    sh "oc new-app bluegreen || echo 'Application already Exists'"
+    sh "oc expose service bluegreen || echo 'Service already exposed'"
 }
