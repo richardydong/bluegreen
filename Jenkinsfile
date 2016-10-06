@@ -27,7 +27,6 @@ def buildApp(String project){
 def deployApp(String origProject, String project){
     sh "oc project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
-    sh "oc new-app bluegreen --allow-missing-images"
     sh "oc tag ${origProject}/bluegreen:latest ${project}/bluegreen:latest"
     appDeploy()
 }
