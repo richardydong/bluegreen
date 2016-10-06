@@ -42,3 +42,4 @@ git clone https://github.com/tariq-islam/bluegreen
 
 > One point of caution -- be sure that the Development build completes and the image is pushed into the repository _before_ you approve a deployment into QA or Prod. If you approve into QA or Prod before the newly built image is pushed into the registry from Dev, you'll end up with a bit of a race condition where QA and Prod simply redeploy the now older image.
 
+Once you're all finished, you can run the cleanup.sh script to remove everything.
