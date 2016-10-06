@@ -10,6 +10,8 @@ With integrated pipelines being a great new feature (albeit in tech preview stat
 
 In order to use this example, you just need an OpenShift instance and the oc client tool.
 <br>
+As a side note, I'm working on parameterizing this more so that the following isn't as tedious.
+<br>
 
 # How To Set This Up
 + You need internet connectivity for this... I'm working on making this completely offline, so more to come there.
