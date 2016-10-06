@@ -23,7 +23,6 @@ def buildApp(String project){
     sh "oc login https://192.168.122.124:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
     sh "oc project ${project}"
     sh "oc start-build bluegreen"
-    appDeploy()
 }
 
 // Tag the ImageStream from an original project to force a deployment
