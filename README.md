@@ -14,9 +14,9 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 # How To Set This Up
 + You need internet connectivity for this... I'm working on making this completely offline, so more to come there.
 + Fork this repo. You'll want to be able to make code changes and roll them out across environments.
-+ Edit and commit the _php-bluegreen-app-pipeline-bc.yml_ file so that the git uri on line 10 points to your fork.
-+ Edit and commit the _pipeline-setup.sh_ file such that on lines 7 and 10, you're pointing to your fork. Again note that I'm pointing to a specific branch whereas you may not.
-+ Edit and commit the Jenkinsfile on line 23, provide your specific ip/host:port and login information
++ __Edit and commit__ the _php-bluegreen-app-pipeline-bc.yml_ file so that the git uri on line 10 points to your fork.
++ __Edit and commit__ the _pipeline-setup.sh_ file such that on lines 7 and 10, you're pointing to your fork. Again note that I'm pointing to a specific branch whereas you may not.
++ __Edit and commit__ the _Jenkinsfile_ on line 23, provide your specific ip/host:port and login information
 + Clone your repository locally (note again that this is a branch)
 
 ```
