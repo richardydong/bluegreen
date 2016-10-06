@@ -10,8 +10,8 @@ node {
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
  
-    stage 'Wait for approval'
-    input 'Approve to production?'
+    stage 'Approve for Production'
+    input 'Approve to Production?'
 
     stage 'Deploy to production'
     echo 'Deploying to production'
