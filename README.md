@@ -1,4 +1,4 @@
-# What This Is
+# What This Is For?
 With integrated pipelines being a great new feature (albeit in tech preview status currently) released with OpenShift 3.3, I wanted to put together an easy way for folks to try it out beyond the simplistic example that's included OOTB. This example takes a php application and promotes dev builds across multiple environments automatically, while also asking the user for approval input before deploying into each higher level environment. The flow is as follows:
 
 > 1. Execute the build pipeline
