@@ -33,6 +33,6 @@ def deployApp(String origProject, String project){
 
 // Deploy the project based on an existing ImageStream
 def appDeploy(){
-    sh "oc deploy bluegreen --latest || oc new-app bluegreen || 'Application already exists'"
+    sh "oc deploy bluegreen --latest || oc new-app bluegreen || echo 'Application already exists'"
     sh "oc expose service bluegreen || echo 'Service already exposed'"
 }
