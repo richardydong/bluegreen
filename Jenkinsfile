@@ -3,6 +3,9 @@ node {
     echo 'Building docker image and deploying to Dev'
     buildApp('app-dev')
 
+    stage 'Approve for QA'
+    input 'Approve to QA?'
+
     stage 'Deploy to QA'
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
