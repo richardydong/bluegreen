@@ -19,10 +19,10 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 + __Edit and commit__ the _php-bluegreen-app-pipeline-bc.yml_ file so that the git uri on line 10 points to your fork.
 + __Edit and commit__ the _pipeline-setup.sh_ file such that on lines 7 and 10, you're pointing to your fork. Again note that I'm pointing to a specific branch whereas you may not.
 + __Edit and commit__ the _Jenkinsfile_ on line 23, provide your specific ip/host:port and login information
-+ Clone your repository locally
++ Clone your repository locally ... note in the example below I'm cloning my branch. If you've forked my branch into your master, you can leave the -b flag out.
 
 ```
-git clone https://github.com/tariq-islam/bluegreen
+git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
 ```
 
 + Similar a previous step, you can uncomment out line #5 in the _pipeline-setup.sh_ file and provide your specific ip/host:port and login information, or simply oc login before running the setup script.
