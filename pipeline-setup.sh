@@ -28,7 +28,6 @@ if [ -z "$repository_path" ]; then
 	echo "Using default repository at : " $repository_path
 fi
 
-# Uncomment the following line and specify your master:port to log into if you want to automate the login and not have to login prior to running this script
 oc login "$hostname" --insecure-skip-tls-verify -u "$username"
 oc new-project app-dev --display-name="Application Development Environment"
 oc new-app --name=bluegreen "$repository_path"
