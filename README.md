@@ -25,6 +25,8 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
 ```
 
+### Next Up...
+
 + Run the pipeline-setup.sh script (don't forget to change permissions on the file to make it executable)
 
 ```
