@@ -15,17 +15,15 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 
 # How To Set This Up
 + You need internet connectivity for this... I'm working on making this completely offline, so more to come there.
-+ __Fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments.
-+ __Edit and commit__ the _php-bluegreen-app-pipeline-bc.yml_ file so that the git uri on line 10 points to your fork.
-+ __Edit and commit__ the _pipeline-setup.sh_ file such that on lines 7 and 10, you're pointing to your fork. Again note that I'm pointing to a specific branch whereas you may not.
-+ __Edit and commit__ the _Jenkinsfile_ on line 23, provide your specific ip/host:port and login information
++ __I recommend you fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments. Alternatively, you can just use this one (it's the default). The pipeline expects the app to be called 'bluegreen' for now. I'm hoping to parameterize this as well soon.
+#### If you do fork this repo into your own perform the following steps, otherwise ignore:
++ __Edit and commit__ the ruby-mysql-app-pipeline-bc.yml file so that the git uri on line 10 points to your fork.
 + Clone your repository locally ... note in the example below I'm cloning my branch. If you've forked my branch into your master, you can leave the -b flag out.
 
 ```
 git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
 ```
 
-+ Similar a previous step, you can uncomment out line #5 in the _pipeline-setup.sh_ file and provide your specific ip/host:port and login information, or simply oc login before running the setup script.
 + Run the pipeline-setup.sh script (don't forget to change permissions on the file to make it executable)
 
 ```
