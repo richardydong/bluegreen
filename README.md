@@ -13,6 +13,8 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 > As a side note, I'm working on parameterizing this more so that the following isn't as tedious.
 <br>
 
+Once you go through this one-time setup, the rest is turnkey (run pipeline-setup.sh to go and then cleanup.sh when done)
+
 # How To Set This Up In Your Own Repository
 + You need internet connectivity for this... I'm working on making this completely offline, so more to come there.
 + __Fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments. The pipeline expects the app to be called 'bluegreen' for now. I'm hoping to parameterize this as well soon.
