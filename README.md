@@ -13,7 +13,7 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 > As a side note, I'm working on parameterizing this more so that the following isn't as tedious.
 <br>
 
-# How To Set This Up In Your Own Repository (otherwise you'll use this one)
+# How To Set This Up In Your Own Repository
 + You need internet connectivity for this... I'm working on making this completely offline, so more to come there.
 + __Fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments. Alternatively, you can just use this one (it's the default). The pipeline expects the app to be called 'bluegreen' for now. I'm hoping to parameterize this as well soon.
 + __Edit and commit__ the bluegreen-pipeline-bc.yml file so that the git uri on line 10 points to your fork.
@@ -26,7 +26,7 @@ git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
 
 # Next Up...
 
-+ Edit your Jenkinsfile and update line 23 with your OCP hostname / ip address
++ Edit your Jenkinsfile and update line 23 with your OCP hostname / ip address.
 + Run the pipeline-setup.sh script (don't forget to change permissions on the file to make it executable)
 
 ```
