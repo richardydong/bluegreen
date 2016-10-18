@@ -18,6 +18,7 @@ In order to use this example, you just need an OpenShift instance and the oc cli
 + __Fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments. The pipeline expects the app to be called 'bluegreen' for now. I'm hoping to parameterize this as well soon.
 + __Edit and commit__ the bluegreen-pipeline-bc.yml file so that the git uri on line 10 points to your fork.
 + __Edit and commit__ the pipeline-setup.sh file so that it points to your php-bluegreen-app-pipeline-bc.yml file on line 36. 
++ __Edit and commit__ your Jenkinsfile and update line 23 with your OCP hostname / ip address.
 + Optionally, clone your repository locally ... note in the example below I'm cloning my branch. If you've forked my branch into your master, you can leave the -b flag out.
 
 ```
@@ -26,7 +27,6 @@ git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
 
 # Next Up...
 
-+ Edit your Jenkinsfile and update line 23 with your OCP hostname / ip address.
 + Run the pipeline-setup.sh script (don't forget to change permissions on the file to make it executable)
 
 ```
