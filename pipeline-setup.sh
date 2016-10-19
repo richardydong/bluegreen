@@ -33,6 +33,6 @@ oc new-project app-dev --display-name="Application Development Environment"
 oc new-app --name=bluegreen "$repository_path"
 oc expose service bluegreen
 oc new-app "$jenkins_image" -p JENKINS_PASSWORD=password
-oc create -f <path to your build config here>
+oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/ocp33-pipeline-ti/php-bluegreen-app-pipeline-bc.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"
