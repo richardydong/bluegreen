@@ -19,9 +19,9 @@ You'll need internet connectivity for this. Offline setup coming soon.
 
 # How To Set This Up In Your Own Repository
 + __Fork this specific repo branch (ocp33-pipeline)!__ You'll want to be able to make code changes and roll them out across environments. The pipeline expects the app to be called 'bluegreen' for now. I'm hoping to parameterize this as well soon.
-+ __Edit and commit__ the bluegreen-pipeline-bc.yml file so that the git uri on line 10 points to your fork. Also update the 'ref' (branch) stanza as necessary. 
-+ __Edit and commit__ the pipeline-setup.sh file so that it points to your php-bluegreen-app-pipeline-bc.yml file on line 36. 
-+ __Edit and commit__ your Jenkinsfile and update line 23 with your OCP hostname / ip address as well as the appropriate username and password for logging into OpenShift. It assumes openshift-dev/devel right now. 
++ __Edit and commit__ the bluegreen-pipeline-bc.yml file so that the git uri on line 10 points to your fork. Also update the 'ref' (branch) stanza as necessary.
++ __Edit and commit__ the pipeline-setup.sh file so that it points to your php-bluegreen-app-pipeline-bc.yml file on line 36.
++ __Edit and commit__ your Jenkinsfile and update line 23 with your OCP hostname / ip address as well as the appropriate username and password for logging into OpenShift.
 + Clone your repository locally ... note in the example below I'm cloning my branch. If you've forked my branch into your master, you can leave the -b flag out.
 
 ```
