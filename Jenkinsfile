@@ -3,15 +3,16 @@ node {
     echo 'Building docker image and deploying to Dev'
     buildApp('app-dev')
 
-	stage 'Run integration testing'
-	echo 'Running integration tests'
-
     stage 'Deploy to QA'
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
 
-    stage 'Deploy to production'
-    echo 'Deploying to production'
+    stage 'run integration testing'
+    echo 'Running integration tests'
+    sh 'sleep 30s'
+
+    stage 'Deploy to Production'
+    echo 'Deploying to Production'
     deployApp('app-dev', 'app-prod')
 }
 
