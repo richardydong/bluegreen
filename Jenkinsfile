@@ -2,6 +2,7 @@ node {
     stage 'Build image and deploy in Dev'
     echo 'Building docker image and deploying to Dev'
     buildApp('app-dev')
+    sh 'sleep 30s'
 
     stage 'Deploy to QA'
     echo 'Deploying to QA'
