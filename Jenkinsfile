@@ -2,7 +2,6 @@ node {
     stage 'Build image and deploy in Dev'
     echo 'Building docker image and deploying to Dev'
     buildApp('app-dev')
-    sh 'sleep 30s'
 
     stage 'Approve to QA'
     input 'Approve to QA?'
@@ -36,11 +35,12 @@ def deployApp(String origProject, String project){
     sh "oc project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
     sh "oc tag ${origProject}/bluegreen:latest ${project}/bluegreen:latest"
+    openshiftDeploy(namespace: ${project}, deploymentConfig: 'bluegreen')
     appDeploy()
 }
 
 // Deploy the project based on an existing ImageStream
 def appDeploy(){
-    sh "oc new-app bluegreen || echo 'Application already exists'"
+    // sh "oc new-app bluegreen || echo 'Application already exists'"
     sh "oc expose service bluegreen || echo 'Service already exposed'"
 }
