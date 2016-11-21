@@ -4,6 +4,9 @@ node {
     buildApp('app-dev')
     sh 'sleep 30s'
 
+    stage 'Approve to QA'
+    input 'Approve to QA?'
+    
     stage 'Deploy to QA'
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
