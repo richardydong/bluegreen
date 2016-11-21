@@ -15,6 +15,9 @@ node {
     echo 'Running integration tests'
     sh 'sleep 30s'
 
+    stage 'Approve to Production'
+    input 'Approve to Production?'
+    
     stage 'Deploy to Production'
     echo 'Deploying to Production'
     deployApp('app-dev', 'app-prod')
@@ -24,7 +27,8 @@ node {
 def buildApp(String project){
     sh "oc login https://192.168.122.71:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
 	sh "oc project ${project}"
-    sh "oc start-build bluegreen"
+    // sh "oc start-build bluegreen"
+    openshiftBuild(buildConfig: 'bluegreen', showBuildLogs: 'true')
 }
 
 // Tag the ImageStream from an original project to force a deployment
