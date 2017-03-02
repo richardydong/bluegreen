@@ -5,7 +5,7 @@ node {
 
     stage 'Approve to QA'
     input 'Approve to QA?'
-    
+
     stage 'Deploy to QA'
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
@@ -16,7 +16,7 @@ node {
 
     stage 'Approve to Production'
     input 'Approve to Production?'
-    
+
     stage 'Deploy to Production'
     echo 'Deploying to Production'
     deployApp('app-dev', 'app-prod')
@@ -24,7 +24,7 @@ node {
 
 // Creates a Build and triggers it
 def buildApp(String project){
-    sh "oc login https://192.168.122.71:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
+    sh "oc login https://10.1.2.2:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
 	sh "oc project ${project}"
     // sh "oc start-build bluegreen"
     openshiftBuild(buildConfig: 'bluegreen', showBuildLogs: 'true')
