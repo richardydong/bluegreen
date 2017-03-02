@@ -25,7 +25,7 @@ You'll need internet connectivity for this. Offline setup coming soon.
 + Clone your repository locally ... note in the example below I'm cloning my branch. If you've forked my branch into your master, you can leave the -b flag out.
 
 ```
-git clone https://github.com/tariq-islam/bluegreen -b ocp33-pipeline
+git clone https://github.com/<your git username>/bluegreen -b ocp33-pipeline
 ```
 
 # Next Up...
