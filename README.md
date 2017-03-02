@@ -8,7 +8,7 @@ With integrated pipelines being a great new feature (albeit in tech preview stat
 > 5. The pipeline asks for approval prior to promoting to Production
 > 6. The pipeline deploys to the Production environment upon approval
 
-In order to use this example, you just need an OpenShift instance and the oc client tool.
+In order to use this example, you just need an OpenShift instance and the oc client tool. By default, the current values in the files listed below assume the use of the CDK.
 <br>
 > As a side note, I'm working on parameterizing this more so that the following isn't as tedious.
 <br>
