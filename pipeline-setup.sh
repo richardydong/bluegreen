@@ -4,7 +4,7 @@ echo "Setting up environments and pipeline"
 
 jenkins_image="jenkins-ephemeral"
 
-hostname="https://192.168.122.121:8443"
+hostname="https://10.1.2.2:8443"
 
 username="openshift-dev"
 
